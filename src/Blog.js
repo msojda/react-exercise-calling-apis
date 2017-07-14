@@ -2,6 +2,12 @@ import React from 'react'
 import { connect } from 'react-redux';
 
 class Blog extends React.Component {
+  componentDidMount() {
+    const { dispatch } = this.props;
+
+    dispatch({ type: 'POSTS_FETCH_REQUESTED' });
+  }
+
   render() {
     const posts = this.props.posts;
 
